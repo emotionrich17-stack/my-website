@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification: googlec606d2f35ebac8c4.html"> 
+    <meta name="google-site-verification" content="P47e6KQP6xWmtsBZVVSOe-TnTjW8kI8f5TGf6SngSkE" />
+    <title>Futuristic UI Mockup - Unity of india</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    </head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h4 class="sidebar-logo-text">Unity of india</h4>
+            <button class="sidebar-button active">Dashboard</button>
+            <button class="sidebar-button">Communicate</button>
+            <button class="sidebar-button">Organize</button>
+            <button class="sidebar-button">Create</button>
+            <button class="sidebar-button">Health+</button>
+            <button class="sidebar-button">Settings</button>
+        </div>
+
+        <!-- Main Content Area (Glassmorphism Panel) -->
+        <div class="glass-panel">
+            <h2 class="welcome-heading">Welcome, User!</h2>
+            <h1 class="title">Hello!</h1>
+             <p id="currentTime"></p>            
+            <p class="tagline">Your ultimate daily toolkit.</p>
+
+            <h3>Quick Tools</h3>
+            <div class="tool-grid quick-tools-grid">
+                <!-- Fully functional Timer Widget -->
+                <div class="tool-card timer-card">
+                    <h4>Countdown Timer</h4>
+                    <div class="timer-display" id="timerDisplay">00:00</div>
+                    <div class="timer-controls">
+                        <button class="timer-btn" id="startStopBtn">Start</button>
+                        <button class="timer-btn" id="resetBtn">Reset</button>
+                    </div>
+                    <div class="timer-add-time">
+                        <button class="timer-add-btn" data-time="30">+30s</button>
+                        <button class="timer-add-btn" data-time="60">+1m</button>
+                        <button class="timer-add-btn" data-time="300">+5m</button>
+                    </div>
+                </div>
+
+                <div class="tool-card" onclick="window.open('https://gemini.google.com/', '_blank')">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEA8QDw0NDg0NEA4PEA4NDw8QEBANFREWFhURFRUYHSggGBolGxUVIT0hJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGxAQGi0mICYtLS0uKy4tLS0tLy0tLS0tLzAtLS0tLTAtLS0tLy0tLS8yLS0tLS0tLy0tLS0tLS0tLf/AABEIAOEA4QMBEQACEQEDEQH/xAAbAAEAAQUBAAAAAAAAAAAAAAAAAwECBAUHBv/EAD4QAAICAAMEBwQGCAcAAAAAAAABAgMEBRESITFBBhNRYXGBkSMyQlIHFCJywdFDYnOCoaKx8DNjkrLC4fH/xAAaAQEAAgMBAAAAAAAAAAAAAAAABAUBAgMG/8QAMxEBAAMAAQIEAgkDBAMAAAAAAAECAxEEIQUSMVFBgRMiMnGRobHR8GHB4RRCYvEGIzP/2gAMAwEAAhEDEQA/AO4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABSUklq2klxb3IMxHPaFITUlrFqSfOLTQ5JrMTxK4MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADw/0mZg4xow8ZSXWOdk9OcI6JRfi5a/ukPq7+lXo/AMImb6zHpxEffP+P1YP0bY9xvsocnsW17cIvgpwe/TxT/lNOltxaau/j2EWyjWI7xPE/dP8/N0YnvKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAADj/AErx/wBYxt809YQfUV8fcr1TfnNzevY0Ve1vNpM/J7rw7D6DpaV+M/Wn75/xx82JlWMeHvpvX6GcZPvr4TX+lyM59rRLfqs42ytn7x+fw/Ph2qMk0mmmmk01wa7SzeDmOO0qhgAAAAAAAAAAAAAAAAAAAAAAAAAAABqelOZ/VsLZYnpZJdXX+0luT8t78jltfyVmU3w/pv8AUb1rPp6z90fzhyCKK2sPcWskiiRSqJpd07oNmPW4ZVt62YfSt99fwP03eRNr6PKeI5eXabR6T3/d6M2QAAAAAAAAAAAAAAAAAAAAAAAAAAAAHMOnebdfiOqg9asPrHdwla/eflwIG9/NbiPg9d4R030OPnt62/T4POJGtap97pIolUog66N30XzL6tiIyb9nP7Fn3Xz8mS658wqOr4vXh1JPXeuDOanVAAAAAAAAAAAAAAAAAAAAAAAAAADz/THPFhadmDX1i9ONa5pfFZ4LVebRx208kdvVZeGdH/qNObfZr6/2j5/o5al4vvfFvtIVavWXukjElUohaaJIomZ0V+uiWKJudFbro9/0LzfrIdRN+1qX2W/jq/NcPQ49Tj5frR6IMzEy9MRWAAAAAAAAAAAAAAAAAAAAAAAAAxsxx0MPXK2x6QgvNvlFd7NbWiscy64Y22vFKesuS5tj54m6d1nGW6MeUK1wiv74tlfMze3MvY45U6fOM6/9z7sVRO9KuWmi9ImZ0QNdUiRNzortdV6JtKK/TRNhcTKqcbIPZnBqSf4Pu5Hf6KLV8sodtOJ5dOybNIYmpWR3S4ThzjPs8Ck3wtjfyykZ3i8cwzzg3AAAAAAAAAAAAAAAAAAAAAAIsViIVQlZZJQhBauT5Ixa0VjmW+edtLRWsczLmPSPOp4uznGiDfVwf+6Xe/4FdprOk/0ep6Tpq9NT/lPrP9mpUDpSrfTVcokzOiBpqqkT881frsqTaUV+mpqS6UQb6KbRIrVGtdm5Pm88LYrIb0904cpx7PE036au1PLPylrTec7cw6fluYV4iuNtUtYy5c4y5xa5M81tjfG/ktC2z0rpXzVZRybgAAAAAAAAAAAAAAAAAAAY+PxtdEHZbJRivVvsS5s0vpWkc2dMsr628tIc5z/OrMXLfrCmL+xX3/NLtZV67zrP9Ho+l6anTV97fGf2arYN6Q2vqbJOzohabDRYZUV+my1k/OiBpqtbJlKIV9FrkSa1RbXWOR2irjNlrkbxDnMs7Jc5twlm3W9YvTbrfuzX4PvOHU9LTenlt8p9m+O9srcx84dQybN6sVXt1S3r34P3oS7GvxPL9R018LeW8fP3XmO1da81bAjuoAAAAAAAAAAAAAAAAAafOOkFWHTiva3coRe5fefL+pC6nrs8e0d7e37+yb03RX17z2j3/Z4bMMZbiJ7ds9p8ordGK7IoqbbX1tzaV1nTPGvlpDF2DtRy01UcSflVC02WNFllRA02WSLHKiDpqjbJ9KId9EcmSq1RrXRykd4hxmyxs3iGkytbNuGOVNTLCfBY22iaspsddkea4NdjXBruOemVNa+W8cw2pe1J81Z4l0To70yqxGzXfs0Yjhx9nY/1W+D7n/E871nhd8vrZ96/nH891v0/XV0+rftP5T/PZ6kqk8AAAAAAAAAAAAABg47NaafenrL5I75f9eZD6jr8MPt27+0eqRl02mnpHb3eZzPP7bdYw9lB9nvNd75FF1Hi2mvan1Y/NaY9Fnn3t3n8mkdZCpZKtotcCXnKLfVZKJPyQ9NUUkWeMIGmqKRaY1Qr6oZMss6ol7opMnUhHtZFJkisOUyjbOsQ0mVrZuwoGAyAYUA3+SdK8ThtIt9dSvgsb1S/VlxRA6nw7Hbv6T7wl49Zpn29Ye6yjpXhcRous6q1/o7dItvufBlD1Hh22PfjmPeFrl1mWnbnifaW9ICUAAAAAAAAUb08jEzx3GkxPSFJtV17Wm7ak9F46Hnt/wDyClZmMq8/1ntCwz6GZ72lqcXmd9m52OMflr+yvzfqVG/inU7dptxHtHb/AD+aZn0+VPSPx7sDqyFDvN1rgdIlzm6xwJFJcL6IpRJ2SJpohmixyQdNGPNlpihaaIJstcUO90MmWWbhNkUmTaOcyikyRVrMo2dYaqGwoGAAAAANANplufYrD6KrET2F+js9pXp2JS91eDRF26PDb7de/vHaf59/Lvn1Guf2bfKe8fz7npsB9ID3LEYbs1nRL1exLh6sq9fBo9c7fKf3j9k3PxKf99fw/b/t7fDXxshGyD1hNKUX2plHek0tNbesLWtotHMJTVkAAAAFJLVNPg1oYmImOJZieHnsRkE0265RkuSluenYeU38A1rMzlaJj2nssadbWftQ1t+FnX78JR72t3rwKjbptsP/AK1mP0/H0SK61t9mUOyc4Ym62UTpVytdFOJIoj3uhmidmiXuxrCxylC0sxbC0xlDvZjzLXGUa0oZMss5cplHIm0lqiZJqLGdYYUNmFAAAAAAqGU+Cwltz2aarLZLc+ri2k/1nwj5tHPTWmcc3mI+9tStrzxSOfuekwHQXFT0dsq6IvTVa9ZPTmtFuT82Vmvi+NfsRM/lCZn4frb7XEfnP8/F0PA4WNNcKoa7NcVFa8d3M89rpOl5vPrK5pSKVisfBOc2wAAAAAACjWvHejExExxI1+Kyeqe+K6uX6vD0KrqPB+n170jyz/T0/B2rtaPVpMZltlfFax+aO9efYUXUeH7dP3mOY94dPpIlr5ROFHK0seyJLzlFvLFsRPylEuxbEWWNkS7Fmi1xsj2QzLLKznKJk+ktVjJVZFjO0SLTdhQyAAABssoyPEYp+yrexzslugvPn5EbqOrywj689/b4u+PT6a/Zjt7vcZT0Gw9ekr28RP5X9mtP7vPz9Ci6jxfW/bP6sfms8vD86979/wBHqaaowiowjGEI7lGCUYpdyRV2tNp5tPMp8RERxC81ZAAAAAAAAAAAAaA1OYZLGesq9IT+X4X+RUdV4XW/1su0+3wn9meXmsTRKDcZRcZLimU81tnby2jiXG8MK2BJzsi3hiWxLDKyLeGJZEs8bo1oY80WmV3KUMiwzs1WMm0sLGSKyLWjpEsKGQMitVUpyUYRlOcnpGEE3JvsSMWtFY5tPEMxEzPEer3nR3oMlpZjNJS4rDp6xj99/E+5bvEoer8Wmfq4fj+385WvT+H/AO7X8P39/wBHtq64xSjGKjFbkorRJFHNptPMrOIiO0LjDIAAAAAAAAAAAAAAAAxsdgoXR0kt/KS4pkfqOmptXi34sTHLyGZYCVUtmS3P3ZLhJFFpjfC3lt8pRtK8NXbA7Z2Q7wwrYlljdGtDFsiWmV3CUEkWOV2ko2T6WYWMlVsKaHaJFNDbllk5bl1mIsVVUdqb3t/DGPzSfJHPbemNPPeezfPO2lvLV1Do70dqwcd2k75L7drW/wAI9iPL9X1t+onv2r8IXvT9NXGP6+7dEJJAAAAAAAAAAAAAAAAAAAAhxeGjbFwmtU/VPtRz1yrrXy2YmImOHic1wEqZ7Mt6e+MuUl+ZSXxtjbyz8pQdaTWWouiScrIV4YdqLPK6NZjTRZZXcpRMn53arWTKWZU0O8WZZOXZfZiLI1VR1nLm+EY85PuMa71ypN7ejpnnbS3lq6rkWTVYStQrWsnvssfvTl2v8jzHVdVfqL+a3yj2X+GFca+Wvzn3bIjO4AAAAAAAAAAAAAAAAAAAAABi5jgo3wcJceMZc4y7TltlGtfLLS9ItHEufY/DyrnKE1pKL0f4NdxVVrNLeWVTrWazxLW2k/KyHZizLHKzjKFk/O7TlQmUuzyvqqlOUYxi5Tm1GMVxcm9yJEaREcy2rzM8Q6n0aySOEq03O6ejsn3/ACruRQdX1M72/pHo9F03TxjXj4/FuCKkgAAAAAAAAAAAAAAAAAAAAAAABoulWV9bX1kF7Wpcvir5rxXH/wBI3U5eaPNHrCJ1ePnr5o9Yc/tZHzlR2lizJ+dnCZQyJ2d2nKhMpdnl7roFkmi+t2L7Uk1Snyhzn4vh4eJG6vqOf/XHzXXhvT9vpbfL7vf5/o9oQFsAAAAAAAAAAAAAAAAAAAAAAAAAABzfpZl3UXvRezt1nDsT+KP99pCvTy2ef67L6LTt6S89NnWkq2ZRMmUs05bHIMseJvhV8HvWPsrXH14Hf6Xyxyk9LjO2kU+Hx+51uuCilGK0jFJJLkkRHq4iIjiFwZAAAAAAAAAAAAAAAAAAAAAAAAAAA03SzLuvw09FrZV7SHa2lvj5rX+Bz0r5qofXY/S4zx6x3hyyUjhWXlZss1JFZa8ujdAMt6uh3SX28Q9V3VL3fXe/Q6TPL0nhWHky88+tv0+D1JhaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHIekeB+r4q6tLSG1tw/Zz3pLw3r90izHFuHjuty+h3tX4esfdP84YmAwrutrpjxtnGGvYm98vJavyN6y4ZZzrpFI+M8OzU1qEYwitIwSjFLlFLRI7vb1rFYiIXhkAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L9JWD/wAC9L5qpv8Amj/y9ThrHeJUHjeX2dI+6f7MH6O8Ht4mVrWsaIPR/wCZPd/Ta9Rn6o/g2Xm2m/tH5z/h0g7vTgAAAAAAAAAAAAAAAAAAAAAAAAAAAAACPEUQsi4WQjOEuMZLVMxMctb0reOLRzCzB4OumOxVXGuPHSK03iIiPRrnlTOPLSOITmXQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH//Z" alt="gemini">
+                    <p>gemini</p>
+                </div>
+                <div class="tool-card" onclick="window.open('https://chat.openai.com/', '_blank')">
+                    <div class="card-icon-placeholder"><img class="social-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" /></div>
+                    <h4>ChatGPT</h4>
+                </div>
+                 <div class="tool-card" onclick="window.open('https://vclock.com/', '_blank')">
+                    <div class="card-icon-placeholder">⏰</div>
+                    <h4>Alarm</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://onlinenotepad.org/notepad', '_blank')">
+                    <div class="card-icon-placeholder">📝</div>
+                    <h4>Notes</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.calculator.net/', '_blank')">
+                    <div class="card-icon-placeholder">🧮</div>
+                    <h4>Calculator</h4>
+                </div>
+            </div>
+
+            <h3>All Tools</h3>
+            <!-- First row of All Tools -->
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://www.timeanddate.com/worldclock/', '_blank')">
+                    <div class="card-icon-placeholder">🌍</div>
+                    <h4>World Clock</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.timeanddate.com/calendar/', '_blank')">
+                    <div class="card-icon-placeholder">📅</div>
+                    <h4>Calendar</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://conendara.com/', '_blank')">
+                    <div class="card-icon-placeholder">🔢</div>
+                    <h4>Conendar</h4>
+                </div>
+            </div>
+            <!-- Second row of All Tools -->
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://www.todoist.com/', '_blank')">
+                    <div class="card-icon-placeholder">✅</div>
+                    <h4>To-Do List</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://files.community/', '_blank')">
+                    <div class="card-icon-placeholder">📁</div>
+                    <h4>File Sharing</h4>
+                </div>
+                 <div class="tool-card" onclick="window.open('https://slowroads.io/', '_blank')">
+                    <div class="card-icon-placeholder">🚗</div>
+                    <h4>SlowRoads</h4>
+                </div>
+            </div>
+            <!-- Third row of All Tools -->
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://ev.io/', '_blank')">
+                    <div class="card-icon-placeholder">🎮</div>
+                    <h4>Ev.io</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://poki.com/', '_blank')">
+                    <div class="card-icon-placeholder">🕹️</div>
+                    <h4>Poki Games</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://online-voice-recorder.com/', '_blank')">
+                    <div class="card-icon-placeholder">🎙️</div>
+                    <h4>Voice Recorder</h4>
+                </div>
+            </div>
+            <!-- Fourth row of All Tools -->
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://ev.io/', '_blank')">
+                    <div class="card-icon-placeholder">📸</div>
+                    <h4>Image</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://voice-sharing.com/', '_blank')">
+                    <div class="card-icon-placeholder">🗣️</div>
+                    <h4>Voice Sharing</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.piliapp.com/actual-size/cm-ruler/', '_blank')">
+                    <div class="card-icon-placeholder">📏</div>
+                    <h4>Ruler</h4>
+                </div>
+            </div>
+            <!-- Fifth row of All Tools -->
+            <div class="tool-grid">
+                 <div class="tool-card" onclick="window.open('https://www.dashlane.com/features/password-generator', '_blank')">
+                    <div class="card-icon-placeholder">🔑</div>
+                    <h4>Password Gen</h4
+            </div>
+
+
+            <!-- Social Media - using the tool-grid for consistency -->
+            <h3>Social Media</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://www.instagram.com/', '_blank')">
+                    <div class="card-icon-placeholder"><img class="social-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" /></div>
+                    <h4>Instagram</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.facebook.com/', '_blank')">
+                    <div class="card-icon-placeholder"><img class="social-logo" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook" /></div>
+                    <h4>Facebook</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://wa.me/', '_blank')">
+                    <div class="card-icon-placeholder"><img class="social-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" /></div>
+                    <h4>WhatsApp</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://x.com/', '_blank')">
+                    <div class="card-icon-placeholder"><img class="social-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="X Logo" /></div>
+                    <h4>X</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.youtube.com/', '_blank')">
+                    <div class="card-icon-placeholder"><img class="social-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" /></div>
+                    <h4>YouTube</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.linkedin.com/', '_blank')">
+                    <div class="card-icon-placeholder"><img class="social-logo" src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn" /></div>
+                    <h4>LinkedIn</h4>
+                </div>
+            </div>
+
+            <!-- AI Tools -->
+            <h3>AI Tools</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://gemini.google.com/', '_blank')">
+                    <div class="card-icon-placeholder">✨</div>
+                    <h4>Gemini</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://copilot.microsoft.com/', '_blank')">
+                    <div class="card-icon-placeholder">🧩</div>
+                    <h4>Copilot</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.perplexity.ai/', '_blank')">
+                    <div class="card-icon-placeholder">🔎</div>
+                    <h4>Perplexity</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://chat.openai.com/', '_blank')">
+                    <div class="card-icon-placeholder"><img class="social-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" /></div>
+                    <h4>ChatGPT</h4>
+                </div>
+            </div>
+
+            <!-- Student / Gov. Websites -->
+            <h3>Student / Govt. Websites</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://scholarships.gov.in/', '_blank')">
+                    <div class="card-icon-placeholder">🎓</div>
+                    <h4>Scholarships</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.digilocker.gov.in/', '_blank')">
+                    <div class="card-icon-placeholder">📂</div>
+                    <h4>DigiLocker</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.cbse.gov.in/', '_blank')">
+                    <div class="card-icon-placeholder">📘</div>
+                    <h4>CBSE</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://ncert.nic.in/', '_blank')">
+                    <div class="card-icon-placeholder">📖</div>
+                    <h4>NCERT</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.nta.ac.in/', '_blank')">
+                    <div class="card-icon-placeholder">📝</div>
+                    <h4>NTA</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.ugc.ac.in/', '_blank')">
+                    <div class="card-icon-placeholder">🏛️</div>
+                    <h4>UGC</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.aicte-india.org/', '_blank')">
+                    <div class="card-icon-placeholder">📚</div>
+                    <h4>AICTE</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://nios.ac.in/', '_blank')">
+                    <div class="card-icon-placeholder">🧾</div>
+                    <h4>NIOS</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.google.com', '_blank')">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                  <h4>Google</h4>
+                  </div>
+                <div class="tool-card" onclick="window.open('https://mail.google.com/', '_blank')">
+                    <div class="card-icon-placeholder">✉️</div>
+                    <h4>Gmail</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://maps.google.com/', '_blank')">
+                    <div class="card-icon-placeholder">🗺️</div>
+                    <h4>Maps</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.wikipedia.org/', '_blank')">
+                    <div class="card-icon-placeholder">📜</div>
+                    <h4>Wikipedia</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.mygov.in/', '_blank')">
+                    <div class="card-icon-placeholder">🇮🇳</div>
+                    <h4>MyGov</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.india.gov.in/', '_blank')">
+                    <div class="card-icon-placeholder">🌏</div>
+                    <h4>India.gov</h4>
+                </div>
+            </div>
+
+            <!-- Games -->
+            <h3>Games</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://slowroads.io/', '_blank')">
+                    <div class="card-icon-placeholder">🚗</div>
+                    <h4>SlowRoads</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://ev.io/', '_blank')">
+                    <div class="card-icon-placeholder">🎮</div>
+                    <h4>Ev.io</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://poki.com/', '_blank')">
+                    <div class="card-icon-placeholder">🕹️</div>
+                    <h4>Poki</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.crazygames.com/', '_blank')">
+                    <div class="card-icon-placeholder">🔥</div>
+                    <h4>CrazyGames</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.bgames.com/', '_blank')">
+                    <div class="card-icon-placeholder">⭐</div>
+                    <h4>BGames</h4>
+                </div>
+            </div>
+
+            <!-- Work & Productivity -->
+            <h3>Work & Productivity</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://www.timeanddate.com/worldclock/', '_blank')">
+                    <div class="card-icon-placeholder">🌍</div>
+                    <h4>World Clock</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.timeanddate.com/calendar/', '_blank')">
+                    <div class="card-icon-placeholder">📅</div>
+                    <h4>Calendar</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.unitconverters.net/', '_blank')">
+                    <div class="card-icon-placeholder">🔢</div>
+                    <h4>Converter</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.xe.com/currencyconverter/', '_blank')">
+                    <div class="card-icon-placeholder">💵</div>
+                    <h4>Currency</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.todoist.com/', '_blank')">
+                    <div class="card-icon-placeholder">✅</div>
+                    <h4>To-Do List</h4>
+                </div>
+                 <div class="tool-card" onclick="window.open('https://files.community/', '_blank')">
+                    <div class="card-icon-placeholder">📁</div>
+                    <h4>File Sharing</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://online-voice-recorder.com/', '_blank')">
+                    <div class="card-icon-placeholder">🎙️</div>
+                    <h4>Voice Recorder</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.piliapp.com/actual-size/cm-ruler/', '_blank')">
+                    <div class="card-icon-placeholder">📏</div>
+                    <h4>Ruler</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.dashlane.com/features/password-generator', '_blank')">
+                    <div class="card-icon-placeholder">🔑</div>
+                    <h4>Password Gen</h4>
+                </div>
+                 <div class="tool-card" onclick="window.open('https://www.the-qrcode-generator.com/', '_blank')">
+                    <div class="card-icon-placeholder">📸</div>
+                    <h4>QR Code Gen</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.zoho.com/forms/', '_blank')">
+                    <div class="card-icon-placeholder">📄</div>
+                    <h4>Zoho Forms</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://excel.cloud.microsoft/', '_blank')">
+                    <div class="card-icon-placeholder">📊</div>
+                    <h4>Excel</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://powerpoint.office.com/', '_blank')">
+                    <div class="card-icon-placeholder">📑</div>
+                    <h4>PowerPoint</h4>
+                </div>
+            </div>
+            <!-- BioDigital Human, Plane Crash Info, Old Maps Online -->
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://human.biodigital.com/', '_blank')">
+                    <img src="https://human.biodigital.com/favicon.ico" alt="BioDigital Human" style="width:40px; height:40px; object-fit:contain; margin-bottom:10px;">
+                    <h4>BioDigital Human</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.planecrashinfo.com/', '_blank')">
+                    <img src="https://www.planecrashinfo.com/favicon.ico" alt="Plane Crash Info" style="width:40px; height:40px; object-fit:contain; margin-bottom:10px;">
+                    <h4>Plane Crash Info</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.oldmapsonline.org/en', '_blank')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3943/3943662.png" alt="Old Maps Online" style="width:40px; height:40px; object-fit:contain; margin-bottom:10px;">
+                    <h4>Old Maps Online</h4>
+                </div>
+            </div>
+
+            <!-- Browsers & Search -->
+            <h3>Browsers & Search</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://www.google.com', '_blank')">
+                    <img src="https://www.google.com/favicon.ico" alt="Google">
+                    <h4>Google</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.bing.com', '_blank')">
+                    <img src="https://www.bing.com/sa/simg/favicon-2x.ico" alt="Bing">
+                    <h4>Bing</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://duckduckgo.com', '_blank')">
+                    <img src="https://duckduckgo.com/favicon.ico" alt="DuckDuckGo">
+                    <h4>DuckDuckGo</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://in.search.yahoo.com', '_blank')">
+                    <img src="https://s.yimg.com/rz/l/favicon.ico" alt="Yahoo Search">
+                    <h4>Yahoo Search</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.ecosia.org', '_blank')">
+                    <img src="https://www.ecosia.org/favicon.ico" alt="Ecosia">
+                    <h4>Ecosia</h4>
+                </div>
+            </div>
+
+            <!-- Productivity -->
+            <h3>Productivity</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://office.com/launch/word', '_blank')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Microsoft_Word_2013-2019_logo.svg" alt="Word">
+                    <h4>Microsoft Word</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.onenote.com', '_blank')">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoftonenote.svg" alt="Microsoft OneNote">
+                    <h4>Microsoft OneNote</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.notion.so', '_blank')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg" alt="Notion">
+                    <h4>Notion</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.evernote.com', '_blank')">
+                    <img src="https://evernote.com/favicon.ico" alt="Evernote">
+                    <h4>Evernote</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://trello.com', '_blank')">
+                    <img src="https://trello.com/favicon.ico" alt="Trello">
+                    <h4>Trello</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://slack.com', '_blank')">
+                    <img src="https://slack.com/favicon.ico" alt="Slack">
+                    <h4>Slack</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://calendar.google.com', '_blank')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar">
+                    <h4>Google Calendar</h4>
+                </div>
+            </div>
+
+            <!-- Music & Entertainment -->
+            <h3>Music & Entertainment</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://www.spotify.com', '_blank')">
+                    <img src="https://www.spotify.com/favicon.ico" alt="Spotify">
+                    <h4>Spotify</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://soundcloud.com', '_blank')">
+                    <img src="https://soundcloud.com/favicon.ico" alt="SoundCloud">
+                    <h4>SoundCloud</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://gaana.com', '_blank')">
+                    <img src="https://gaana.com/favicon.ico" alt="Gaana">
+                    <h4>Gaana</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.jiosaavn.com', '_blank')">
+                    <img src="https://www.jiosaavn.com/favicon.ico" alt="JioSaavn">
+                    <h4>JioSaavn</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.netflix.com', '_blank')">
+                    <img src="https://www.netflix.com/favicon.ico" alt="Netflix">
+                    <h4>Netflix</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.primevideo.com', '_blank')">
+                    <img src="https://www.primevideo.com/favicon.ico" alt="Amazon Prime Video">
+                    <h4>Amazon Prime Video</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.hotstar.com', '_blank')">
+                    <img src="https://www.hotstar.com/favicon.ico" alt="Disney+ Hotstar">
+                    <h4>Disney+ Hotstar</h4>
+                </div>
+            </div>
+
+            <!-- Coding & Development -->
+            <h3>Coding & Development</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://github.com', '_blank')">
+                    <img src="https://github.com/favicon.ico" alt="GitHub">
+                    <h4>GitHub</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://replit.com', '_blank')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Replit_logo.svg" alt="Replit">
+                    <h4>Replit</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://codepen.io', '_blank')">
+                    <img src="https://codepen.io/favicon.ico" alt="CodePen">
+                    <h4>CodePen</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://stackoverflow.com', '_blank')">
+                    <img src="https://stackoverflow.com/favicon.ico" alt="Stack Overflow">
+                    <h4>Stack Overflow</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.w3schools.com', '_blank')">
+                    <img src="https://www.w3schools.com/favicon.ico" alt="W3Schools">
+                    <h4>W3Schools</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.geeksforgeeks.org', '_blank')">
+                    <img src="https://www.geeksforgeeks.org/favicon.ico" alt="GeeksforGeeks">
+                    <h4>GeeksforGeeks</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.freecodecamp.org', '_blank')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/FreeCodeCamp_logo.svg" alt="freeCodeCamp">
+                    <h4>freeCodeCamp</h4>
+                </div>
+            </div>
+
+            <!-- Finance & Banking -->
+            <h3>Finance & Banking</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://paytm.com', '_blank')">
+                    <img src="https://paytm.com/favicon.ico" alt="Paytm">
+                    <h4>Paytm</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://pay.google.com', '_blank')">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlepay.svg" alt="Google Pay">
+                    <h4>Google Pay</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.phonepe.com', '_blank')">
+                    <img src="https://www.phonepe.com/favicon.ico" alt="PhonePe">
+                    <h4>PhonePe</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.bhimupi.org.in', '_blank')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/BHIM_Logo.svg" alt="BHIM UPI">
+                    <h4>BHIM UPI</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.onlinesbi.com', '_blank')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/State_Bank_of_India_logo.svg" alt="SBI Online">
+                    <h4>SBI Online</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.hdfcbank.com', '_blank')">
+                    <img src="https://companieslogo.com/img/orig/HDFCBANK.NS_BIG-adb6b7bb.png?t=1720244492" alt="HDFC Netbanking">
+                    <h4>HDFC Netbanking</h4>
+                </div>
+            </div>
+
+            <!-- News & Current Affairs -->
+            <h3>📰 News</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://www.bbc.com/news', '_blank')">
+                    <img src="https://www.bbc.com/favicon.ico" alt="BBC News">
+                    <h4>BBC News</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://timesofindia.indiatimes.com', '_blank')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Times_of_India_Logo.svg" alt="Times of India">
+                    <h4>Times of India</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.thehindu.com', '_blank')">
+                    <img src="https://www.thehindu.com/favicon.ico" alt="The Hindu">
+                    <h4>The Hindu</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://indianexpress.com', '_blank')">
+                    <img src="https://indianexpress.com/favicon.ico" alt="Indian Express">
+                    <h4>Indian Express</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.ndtv.com', '_blank')">
+                    <img src="https://www.ndtv.com/favicon.ico" alt="NDTV">
+                    <h4>NDTV</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.aljazeera.com', '_blank')">
+                    <img src="https://www.aljazeera.com/favicon.ico" alt="Al Jazeera">
+                    <h4>Al Jazeera</h4>
+                </div>
+            </div>
+
+            <!-- Weather & Maps -->
+            <h3>Weather & Maps</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://maps.google.com', '_blank')">
+                    <img src="https://maps.google.com/favicon.ico" alt="Google Maps">
+                    <h4>Google Maps</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://maps.apple.com', '_blank')">
+                    <img src="https://www.apple.com/favicon.ico" alt="Apple Maps">
+                    <h4>Apple Maps</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.accuweather.com', '_blank')">
+                    <img src="https://www.accuweather.com/favicon.ico" alt="AccuWeather">
+                    <h4>AccuWeather</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://weather.com', '_blank')">
+                    <img src="https://weather.com/favicon.ico" alt="Weather.com">
+                    <h4>Weather.com</h4>
+                </div>
+                
+                </div>
+
+            <!-- Design & Creativity -->
+            <h3>Design & Creativity</h3>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="window.open('https://www.canva.com', '_blank')">
+                    <img src="https://www.canva.com/favicon.ico" alt="Canva">
+                    <h4>Canva</h4>
+                </div>
+                <div class="tool-card" onclick="window.open('https://www.figma.com', '_blank')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma">
+                    <h4>Figma</h4>
+                </div>
+                <div class="tool-card"
